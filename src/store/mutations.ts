@@ -6,7 +6,6 @@ import { State } from "./state";
 export type Mutations<S = State> = {
   [MutationTypes.SET_PEOPLE](state: S, payload: IPersonFiltered[]): void;
   [MutationTypes.SET_FAVORITES_DATA](state: S, payload: IPersonFiltered[]): void;
-  [MutationTypes.SET_SEARCH](state: S, payload: string): void;
   [MutationTypes.UPDATE_SEARCH](state: S, payload: IPerson[]): void;
 };
 
@@ -24,11 +23,6 @@ export const mutations: MutationTree<State> & Mutations = {
   // Set favorites data
   [MutationTypes.SET_FAVORITES_DATA](state, payload: IPersonFiltered[]) {
     state.favorites = payload;
-  },
-
-  // Set search
-  [MutationTypes.SET_SEARCH](state, payload) {
-    state.searchValue = payload;
   },
 
   // Update search

@@ -3,7 +3,6 @@ import { IPersonFiltered, IPerson } from "@/interfaces/IPeople";
 interface IState {
   people: IPersonFiltered[];
   favorites: IPersonFiltered[];
-  searchValue: string;
   searchResults: IPerson[];
   character: IPerson | null;
 }
@@ -11,7 +10,6 @@ interface IState {
 export const state: IState = {
   people: [],
   favorites: [],
-  searchValue: "",
   searchResults: [],
   character: null,
 };

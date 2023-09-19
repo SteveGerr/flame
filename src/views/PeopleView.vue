@@ -64,8 +64,6 @@ const addFavorite = (e: IPersonFiltered) => {
 
 const updateSearch = debounce(() => {
   if (people.value.length) {
-    store.commit(MutationTypes.SET_SEARCH, search.value);
-
     store.dispatch(ActionTypes.FIND_CHARACTERS, search.value);
   } else {
     search.value = "";
@@ -74,7 +72,6 @@ const updateSearch = debounce(() => {
 
 const clearSearch = () => {
   search.value = "";
-  store.commit(MutationTypes.SET_SEARCH, null);
   store.dispatch(ActionTypes.FIND_CHARACTERS, null);
 };
 </script>
