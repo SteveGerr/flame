@@ -7,8 +7,7 @@ import CharacterView from "@/views/CharacterView.vue";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    name: "home",
-    component: HomeView,
+    redirect: "/people",
   },
   {
     path: "/people",
