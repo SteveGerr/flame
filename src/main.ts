@@ -1,6 +1,13 @@
 import { createApp } from "vue";
-import { store, key } from "./store";
-import router from "./router";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import VueAxios from "vue-axios";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import axios from "axios";
 import App from "./App.vue";
+import router from "./router";
+import store from "./store";
 
-createApp(App).use(store, key).use(router).mount("#app");
+const app = createApp(App);
+app.provide("axios", app.config.globalProperties.axios);
+
+createApp(App).use(store).use(router).use(VueAxios, axios).mount("#app");
